@@ -42,3 +42,31 @@ X$setinverse(inverse)
 inverse
 }
 
+
+X <- matrix(rpois(25,3), nrow = 5)
+cX <- makeCacheMatrix(X)
+cX$get()
+cacheSolve(cX)
+cacheSolve(cX)
+invX <- cacheSolve(cX)
+
+Y <- matrix(rpois(20,2), nrow = 5, ncol = 4)
+cY <- makeCacheMatrix(Y)
+cY$get()
+cacheSolve(cY)
+cacheSolve(cY)
+invY <- cacheSolve(cY)
+
+
+Z <- matrix(rpois(20,1), nrow = 4, ncol = 5)
+cZ <- makeCacheMatrix(Z)
+cZ$get()
+cacheSolve(cZ)
+cacheSolve(cZ)
+invZ <- cacheSolve(cZ)
+
+invX %*% X 
+X %*% invX
+invY %*% Y 
+Z %*% invZ 
+
