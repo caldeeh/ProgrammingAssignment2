@@ -20,17 +20,6 @@ list(set=set,get=get,setinverse=setinverse,getinverse=getinverse)
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
-if(require("corpcor")){
-	print("corpcor is loaded correctly")
-	} else {
-		print("trying to install corpcor")
-		install.packages("corpcor")
-		if(require(corpcor)){
-			print("corpcor installed and loaded")
-			} else {
-			stop("could not install corpcor")
-			}
-		}
 inverse <- X$getinverse()
 if(!is.null(inverse)){
 	message("matrix is in memory")
